@@ -1,5 +1,4 @@
 # berberCharactersLCD
 # Description: 
-**EN:** Berber characters (Tifinagh and Romanisation) for LCD display, installed through a Raspberry Pi
-
+**EN:** Berber characters (Tifinagh and Romanisation) for LCD display, installed through a Raspberry Pi \n
 **FR:** Modèles pour l'affichage de caractères berbères (Tifinagh et Latin) sur écran LCD, installation au travers d'une Raspberry Pi
