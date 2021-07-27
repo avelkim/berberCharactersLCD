@@ -1,6 +1,6 @@
 # Changer les valeurs par défaut de IPadr, DIR et CROSSDIR
 IPadr?	=				# Adresse IP de votre Raspberry Pi sur votre réseau local			
-DIR?	=				# Dossier devant contenir votre éxecutable 
+DIR?	=				# Dossier sur votre Raspberry Pi devant contenir votre éxecutable 
 APP	= lcd_user_berber
 
 CROSSDIR        = 
