@@ -1,5 +1,5 @@
 /*******************************************************************************
- * lcdr_user.c - Controleur pour LCd HD44780 ( 20x4 )
+ * lcd_user.c - Controleur pour LCD HD44780 ( 20x4 )
  ******************************************************************************/
 
 #include <stdio.h>
@@ -11,6 +11,9 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <sys/mman.h>
+#include "latinPatterns.h"
+#include "tifinaghPatterns.h"
+
 
 /*******************************************************************************
  * GPIO Pins
@@ -28,7 +31,6 @@
 #define RPI_BLOCK_SIZE  0xB4
 #define RPI_GPIO_BASE   0x20200000
 
-// Q1: A quoi sert le mot clÃ© volatile
 struct gpio_s {
     uint32_t gpfsel[7];
     uint32_t gpset[3];
@@ -51,7 +53,6 @@ volatile struct gpio_s *gpio_regs;
  * GPIO Operations 
  ******************************************************************************/
 
-// Q2: Expliquer la prÃ©sence des drapeaux dans open() et mmap().
 int gpio_setup(void)
 {
 
@@ -70,7 +71,6 @@ int gpio_setup(void)
     return 0;
 }
 
-// Q3: pourquoi appeler munmap() ?
 void gpio_teardown(void)
 {
     munmap((void *) gpio_regs, RPI_BLOCK_SIZE);
@@ -183,8 +183,7 @@ void lcd_data(int character)
     usleep(1);
 }
 
-/* initialization : pour comprendre la sÃ©quence, il faut regarder le cours */
-// Q4: Expliquer le rÃ´le des masques : LCD_FUNCTIONSET, LCD_FS_4BITMODE, etc.
+/* initialization : pour comprendre la sÃ©quence, il faut regarder la doc */
 void lcd_init(void)
 {
     gpio_write(E, 0);
@@ -201,7 +200,6 @@ void lcd_clear(void)
     lcd_command(LCD_RETURNHOME);
 }
 
-// Q5: Expliquez comment fonctionne cette fonction 
 void lcd_message(const char *txt)
 {
     int a[] = { 0, 0x40, 0x14, 0x54 };
@@ -340,7 +338,7 @@ int main(int argc, char **argv)
     lcd_init();
     lcd_clear();
 
-    /* telechargement des caracteres */
+    /* telechargement des caracteres sur la RAM du LCD*/
     lcd_add_char(a, 1);
     lcd_add_char(z, 2);
     lcd_add_char(u, 3);
@@ -350,7 +348,7 @@ int main(int argc, char **argv)
     lcd_add_char(k, 7);
 
 
-    /* Affichage*/
+    /* Affichage du message souhaité*/
     char const Salut[]={0x01, 0x02, 0x03, 0x04, ' ', 0x05, 0x06, 0x04, 0x04, '-', 0x01, 0x07};
     lcd_message(Salut);
 
