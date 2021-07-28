@@ -5,7 +5,7 @@ Modèles de caractères berbères (Tifinagh et Latin) pour un affichage sur écr
 
 ## Materials needed
 - Raspberry Pi
-- LCD Display
+- LCD Display HD44780 ( 20x4 )
 
 ## How to install
 RESERVED
