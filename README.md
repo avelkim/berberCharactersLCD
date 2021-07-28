@@ -33,6 +33,12 @@ Votre message est une chaîne de caractères telle que chaque code de caractère
 - 0x01 renvoit au caractère installé à l'adresse mémoire 0x01 de votre CGRAM lors de l'éxecution du *lcd_add_char*
 
 ## Ce travail vous appartient. Tous les usages vous sont permis.
-Mes remerciements vont à mon professeur de systèmes communiquants qui nous a permis de travailler nos projets en toute liberté.
+Mes remerciements vont à mon professeur de systèmes communiquants qui nous a permis de travailler nos projets en toute liberté.             
+Tenez moi au courant des améliorations que vous y aurez apporté pour que je puisse mettre à jour, et n'hésitez pas à me contacter si vous avez des idées de projets au service de notre langue.
 
+Tanemmirt.
+ⵝⴰⵏⴻⵎⵎⵉⵔⵝ.
+
+## Aperçu de l'exemple fourni
+![162970750_487728905740115_5592863395415367424_n](https://user-images.githubusercontent.com/81772272/127383873-3a21b67a-8631-4efc-8d2c-ee0952521529.jpg)
 
