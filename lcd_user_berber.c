@@ -1,5 +1,5 @@
 /*******************************************************************************
- * lcd_user.c - Controleur pour LCD HD44780 ( 20x4 )
+ * lcd_user_berber.c - Controleur pour LCD HD44780 ( 20x4 )
  ******************************************************************************/
 
 #include <stdio.h>
@@ -16,7 +16,7 @@
 
 
 /*******************************************************************************
- * GPIO Pins
+ * GPIO Pins for Raspberry Pi
  ******************************************************************************/
 #define RS 7
 #define E  27
@@ -96,7 +96,7 @@ void gpio_write(int gpio, int value)
 
 /*******************************************************************************
  * LCD's Instructions ( source = doc )
- * Ces constantes sont utilisÃ©es pour former les mots de commandes
+ * Ces constantes sont utilisées pour former les mots de commandes
  * par exemple dans la fonction lcd_init()
  ******************************************************************************/
 
@@ -183,7 +183,7 @@ void lcd_data(int character)
     usleep(1);
 }
 
-/* initialization : pour comprendre la sÃ©quence, il faut regarder la doc */
+/* initialization : pour comprendre la séquence, il faut regarder la doc */
 void lcd_init(void)
 {
     gpio_write(E, 0);
