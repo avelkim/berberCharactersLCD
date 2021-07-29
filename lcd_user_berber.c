@@ -249,7 +249,7 @@ int main(int argc, char **argv)
     lcd_init();
     lcd_clear();
 
-    /* telechargement des caracteres sur la RAM du LCD*/
+    /* telechargement des caracteres sur la CGRAM du LCD*/
     lcd_add_char(a, 1);
     lcd_add_char(z, 2);
     lcd_add_char(u, 3);
